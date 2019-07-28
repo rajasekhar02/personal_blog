@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Your are git </router-link> |
+      <router-link to="/">changed for checking deploy</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
