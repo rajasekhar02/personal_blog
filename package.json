@@ -9,9 +9,20 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "ag-grid-community": "^24.1.0",
+    "ag-grid-vue": "^24.1.1",
+    "apostrophe-cli": "^2.3.5",
+    "axios": "^0.21.0",
     "core-js": "^2.6.5",
+    "dependency-cruiser": "^9.17.0",
+    "element-ui": "^2.14.1",
+    "luxon": "^1.25.0",
     "register-service-worker": "^1.6.2",
+    "rxjs": "^6.6.3",
     "vue": "^2.6.10",
+    "vue-class-component": "^7.2.6",
+    "vue-custom-element": "^3.2.14",
+    "vue-property-decorator": "^9.0.2",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
@@ -30,7 +41,10 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-loader": "^15.9.5",
+    "vue-template-compiler": "^2.6.10",
+    "vue-template-loader": "^1.1.0",
+    "webpack-cli": "^4.2.0"
   },
   "eslintConfig": {
     "root": true,
