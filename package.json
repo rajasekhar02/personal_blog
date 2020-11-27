@@ -24,6 +24,7 @@
     "vue-custom-element": "^3.2.14",
     "vue-property-decorator": "^9.0.2",
     "vue-router": "^3.0.3",
+    "vue-virtual-scroller": "^1.0.10",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
