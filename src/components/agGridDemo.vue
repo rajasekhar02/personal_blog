@@ -1,10 +1,5 @@
 <template>
   <div class="hello">
-   <!-- <el-table :data="response" v-loading="loading" >
-     <el-table-column prop="id" label="Coin Id"></el-table-column>
-     <el-table-column prop="name" label="Coin Name"></el-table-column>
-     <el-table-column prop="symbol" label="Coin Symbol"></el-table-column>
-   </el-table> -->
     <ag-grid-vue style="height: 100vh;"
                  class="ag-theme-alpine"
                  :columnDefs="columnDefs"
