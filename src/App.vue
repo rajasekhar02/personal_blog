@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">changed for checking deploy</router-link> |
+      <router-link to="/">changed for checking deploy</router-link>
       <router-link to="/about">About</router-link>
+      <router-link to="/vScroller">Scroller</router-link>
+      <router-link to="/agGridDemo">AG Grid</router-link>
     </div>
     <router-view/>
   </div>
@@ -25,6 +27,10 @@
     color: #2c3e50;
     &.router-link-exact-active {
       color: #42b983;
+    }
+    &+a:before{
+      content:'|';
+      padding: 0px 10px;
     }
   }
 }

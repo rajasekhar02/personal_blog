@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import vScrollerDemo from "./components/vScrollerDemo"
+import agGridDemo from '@/components/agGridDemo.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -11,6 +13,16 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/vScroller',
+      name: 'Virtual Scroller',
+      component: vScrollerDemo
+    },
+    {
+      path: '/agGridDemo',
+      name: "Ag Grid",
+      component: agGridDemo
     },
     {
       path: '/about',
