@@ -2,9 +2,10 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">changed for checking deploy</router-link>
-      <router-link to="/about">About</router-link>
+      <router-link to="/home">About</router-link>
       <router-link to="/vScroller">Scroller</router-link>
       <router-link to="/agGridDemo">AG Grid</router-link>
+      <router-link to="/dashboard">Dashboard</router-link>
     </div>
     <router-view/>
   </div>
@@ -12,7 +13,7 @@
 
 <style lang="scss">
 @import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
-  @import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
+@import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
