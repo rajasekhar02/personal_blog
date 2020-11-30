@@ -10,47 +10,53 @@
 </template>
 
 <script>
-import cryptoCurrentApi from "@/services/cryptoCurrency";
-   import {AgGridVue} from "ag-grid-vue";
+import cryptoCurrentApi from '@/services/cryptoCurrency';
+import { AgGridVue } from 'ag-grid-vue';
+
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
   },
-  components:{
-    AgGridVue
+  components: {
+    AgGridVue,
   },
-  data:function(){
+  data() {
     return {
       columnDefs: null,
-                rowData: null
-    }
+      rowData: null,
+    };
   },
-  beforeMount(){
+  beforeMount() {
     this.columnDefs = [
-                {headerName: 'Coin Id', field: 'id',sortable:true,filter:true},
-                {headerName: 'Coin Name', field: 'name',sortable:true,filter:true},
-                {headerName: 'Coin Price', field: 'symbol',sortable:true,filter:true}
-            ];
+      {
+        headerName: 'Coin Id', field: 'id', sortable: true, filter: true,
+      },
+      {
+        headerName: 'Coin Name', field: 'name', sortable: true, filter: true,
+      },
+      {
+        headerName: 'Coin Price', field: 'symbol', sortable: true, filter: true,
+      },
+    ];
   },
   async created() {
     await this.initComponent();
   },
-  methods:{
-    async initComponent(){
-      try{
+  methods: {
+    async initComponent() {
+      try {
         this.loading = true;
         const response = await cryptoCurrentApi.getCoinsList();
-        this.rowData = response.data
-      }catch(err){
-        console.error(err)
-      }finally{
-
+        this.rowData = response.data;
+      } catch (err) {
+        console.error(err);
+      } finally {
         this.loading = false;
       }
-      }
-  }
-}
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

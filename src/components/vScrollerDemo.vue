@@ -26,14 +26,15 @@
 </template>
 
 <script>
-import cryptoCurrentApi from "@/services/cryptoCurrency";
-import "vue-virtual-scroller/dist/vue-virtual-scroller.css";
+import cryptoCurrentApi from '@/services/cryptoCurrency';
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
+
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   props: {
     msg: String,
   },
-  data: function () {
+  data() {
     return {
       columnDefs: null,
       rowData: [],
@@ -41,11 +42,15 @@ export default {
   },
   beforeMount() {
     this.columnDefs = [
-      { headerName: "Coin Id", field: "id", sortable: true, filter: true },
-      { headerName: "Coin Name", field: "name", sortable: true, filter: true },
       {
-        headerName: "Coin Price",
-        field: "symbol",
+        headerName: 'Coin Id', field: 'id', sortable: true, filter: true,
+      },
+      {
+        headerName: 'Coin Name', field: 'name', sortable: true, filter: true,
+      },
+      {
+        headerName: 'Coin Price',
+        field: 'symbol',
         sortable: true,
         filter: true,
       },

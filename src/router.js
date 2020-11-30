@@ -1,9 +1,10 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
-import vScrollerDemo from "./components/vScrollerDemo"
-import agGridDemo from '@/components/agGridDemo.vue'
-Vue.use(Router)
+import Vue from 'vue';
+import Router from 'vue-router';
+import agGridDemo from '@/components/agGridDemo.vue';
+import Home from './views/Home.vue';
+import vScrollerDemo from './components/vScrollerDemo';
+
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
@@ -11,24 +12,29 @@ export default new Router({
   routes: [
     {
       path: '/',
-      alias:'/dashboard',
+      alias: '/datepicker',
+      name: 'datePicker',
+      component: () => import(/* webpackChunkName: "about" */ './views/datePickerView.vue'),
+    },
+    {
+      path: '/dashboard',
       name: 'dashboard',
-      component: ()=>import(/* webpackChunkName: "about" */ './views/dashboard.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/dashboard.vue'),
     },
     {
       path: '/vScroller',
       name: 'Virtual Scroller',
-      component: vScrollerDemo
+      component: vScrollerDemo,
     },
     {
       path: '/agGridDemo',
-      name: "Ag Grid",
-      component: agGridDemo
+      name: 'Ag Grid',
+      component: agGridDemo,
     },
     {
       path: '/home',
       name: 'home',
-      component: ()=>import(/* webpackChunkName: "about" */ './views/dashboard.vue')
-    }
-  ]
-})
+      component: () => import(/* webpackChunkName: "about" */ './views/dashboard.vue'),
+    },
+  ],
+});

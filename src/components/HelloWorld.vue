@@ -9,27 +9,28 @@
 </template>
 
 <script>
-import cryptoCurrentApi from "@/services/cryptoCurrency";
+import cryptoCurrentApi from '@/services/cryptoCurrency';
+
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
   },
-  data:function(){
+  data() {
     return {
-      response:undefined
-    }
+      response: undefined,
+    };
   },
   async mounted() {
     await cryptoCurrentApi.getCurrencyApiStatus();
     const response = await cryptoCurrentApi.getCoinsList();
-    console.log(response)
+    console.log(response);
     // this.response = response.data
   },
-  methods:{
-  
-  }
-}
+  methods: {
+
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
