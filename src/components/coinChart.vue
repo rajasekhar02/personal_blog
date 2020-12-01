@@ -1,6 +1,10 @@
 <template>
   <div>
-    <el-date-picker v-model="value1" value-format="dd-MM-yyyy"></el-date-picker>
+    From:<el-date-picker
+      v-model="value1"
+      value-format="dd-MM-yyyy"
+      @change="getCoinHistoryByCoinId"
+    ></el-date-picker>
     <highcharts :options="chartOptions"></highcharts>
   </div>
 </template>
@@ -8,6 +12,7 @@
 <script>
 import { Chart } from "highcharts-vue";
 import cryptoCurrentApi from "@/services/cryptoCurrency";
+import { DateTime } from "luxon";
 export default {
   props: ["coin_id"],
   components: {
@@ -38,20 +43,27 @@ export default {
           },
         ],
       },
-      value1: "23-12-2012",
+      format: "dd-MM-yyyy",
+      value1: "23-11-2020",
     };
   },
   async mounted() {
     await this.initComponent();
   },
   methods: {
+    getDateDiff(timeZone) {
+      const endDate = DateTime.local();
+      const startDate = DateTime.fromFormat(this.value1, this.format);
+      return endDate.diff(startDate, "days").toObject();
+    },
     async initComponent() {
       await this.getCoinHistoryByCoinId();
     },
     async getCoinHistoryByCoinId() {
+      const dateDiff = this.getDateDiff().days;
       const response = await cryptoCurrentApi.getCoinHistoryByCoinId(
         this.coin_id,
-        this.value1
+        dateDiff
       );
       const coinData = response.data;
       this.chartOptions.series = Object.keys(response.data).map((x, index) => {
