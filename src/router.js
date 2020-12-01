@@ -27,6 +27,12 @@ export default new Router({
       component: vScrollerDemo,
     },
     {
+      path: '/coin/:coin_id',
+      name: "Coin Details",
+      props:true,
+      component: () => import(/* webpackChunkName: "about" */ './views/coinDetails.vue'),
+    },
+    {
       path: '/agGridDemo',
       name: 'Ag Grid',
       component: agGridDemo,

@@ -12,13 +12,13 @@
     >
       <el-row>
         <el-col :span="8">
-          <el-input v-model="item.name"> </el-input>
+          <el-link :href="`/coin/${item.id}`">{{item.name}}</el-link>
         </el-col>
         <el-col :span="8">
-          <el-input v-model="item.name"> </el-input>
+          <el-input v-model="item.id"> </el-input>
         </el-col>
         <el-col :span="8">
-          <el-input v-model="item.name"> </el-input>
+          <el-input v-model="item.symbol"> </el-input>
         </el-col>
       </el-row>
     </recycle-scroller>
