@@ -4,29 +4,30 @@
   </div>
 </template>
 <script>
-import Vue from "vue"
-import loader from "@/components/loader"
-  export default {
-    components:{
-      loader
+import Vue from 'vue';
+import loader from '@/components/loader';
+
+export default {
+  components: {
+    loader,
+  },
+  data() {
+    return {
+      currentComponent: 'loader',
+    };
+  },
+  mounted() {
+    this.initComponent();
+  },
+  methods: {
+    initComponent() {
+      setTimeout(() => {
+        Vue.component('vScrollerDemo', () => import('@/components/vScrollerDemo'));
+        this.currentComponent = 'vScrollerDemo';
+      }, 1000);
     },
-    data() {
-      return {
-        currentComponent:'loader'
-      }
-    },
-    mounted(){
-      this.initComponent();
-    },
-    methods:{
-      initComponent(){
-        setTimeout( ()=>{
-          Vue.component('vScrollerDemo',()=> import('@/components/vScrollerDemo'))
-          this.currentComponent='vScrollerDemo'
-        },1000)
-      }
-    }
-  }
+  },
+};
 </script>
 
 <style lang="scss" scoped>

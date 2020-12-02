@@ -28,8 +28,8 @@ export default new Router({
     },
     {
       path: '/coin/:coin_id',
-      name: "Coin Details",
-      props:true,
+      name: 'Coin Details',
+      props: true,
       component: () => import(/* webpackChunkName: "about" */ './views/coinDetails.vue'),
     },
     {

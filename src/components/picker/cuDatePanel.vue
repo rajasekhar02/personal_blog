@@ -187,43 +187,41 @@
   </transition>
 </template>
 <script>
- import dateRange from "element-ui/packages/date-picker/src/panel/date-range"
+import dateRange from 'element-ui/packages/date-picker/src/panel/date-range';
 
-const extractDateFormat = function(format) {
+const extractDateFormat = function (format) {
   return format
     .replace(/\W?m{1,2}|\W?ZZ/g, '')
     .replace(/(\W+)?h{1,2}|\W?s{1,3}|\W?a/gi, '')
     .trim();
 };
- const extractTimeFormat = function(format) {
+const extractTimeFormat = function (format) {
   return format
     .replace(/\W?D{1,2}|\W?Do|\W?d{1,4}|\W?M{1,4}|\W?y{2,4}\W+/g, '')
     .trim();
 };
 export default {
-   extends: dateRange,
-   data:function(){
-       return{
-           visible:true
-       }
-   },
-   computed:{
-       dateFormat() {
-        if (this.format) {
-          return extractDateFormat(this.format);
-        } else {
-          return 'yyyy-MM-dd';
-        }
-      },
-       timeFormat() {
-        if (this.format) {
-          return extractTimeFormat(this.format);
-        } else {
-            console.log('asdf') 
-          return 'HH:mm:ss';
-        }
-      },
-   }
+  extends: dateRange,
+  data() {
+    return {
+      visible: true,
+    };
+  },
+  computed: {
+    dateFormat() {
+      if (this.format) {
+        return extractDateFormat(this.format);
+      }
+      return 'yyyy-MM-dd';
+    },
+    timeFormat() {
+      if (this.format) {
+        return extractTimeFormat(this.format);
+      }
+      console.log('asdf');
+      return 'HH:mm:ss';
+    },
+  },
 };
 </script>
 

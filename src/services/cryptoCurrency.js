@@ -14,13 +14,13 @@ export function getCoinsList() {
   return axiosInstance.get('/coins/list');
 }
 
-export function getCoinHistoryByCoinId(coinId,dateDiff) {
-  return axiosInstance.get(`/coins/${coinId}/market_chart`,{params:{vs_currency:'inr',interval:'daily',days:dateDiff}});
+export function getCoinHistoryByCoinId(coinId, dateDiff) {
+  return axiosInstance.get(`/coins/${coinId}/market_chart`, { params: { vs_currency: 'inr', interval: 'daily', days: dateDiff } });
 }
 
 
 export default {
   getCurrencyApiStatus,
   getCoinsList,
-  getCoinHistoryByCoinId
+  getCoinHistoryByCoinId,
 };

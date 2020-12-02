@@ -5,13 +5,14 @@
 </template>
 
 <script>
-import coinChart from "@/components/coinChart";
+import coinChart from '@/components/coinChart';
+
 export default {
-  props: ["coin_id"],
+  props: ['coin_id'],
   components: {
     coinChart,
   },
-  data: function () {
+  data() {
     return {};
   },
 };
