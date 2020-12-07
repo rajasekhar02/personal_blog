@@ -1,0 +1,425 @@
+
+> personal_blog@0.1.0 build /home/rajasekhar/webdesign/personal_blog
+> vue-cli-service build "--profile" "--json"
+
+
+ WARNING  Compiled with 13 warnings06:18:39
+
+Module Warning (from ./node_modules/eslint-loader/index.js):
+error: 'agGridDemo' is defined but never used (no-unused-vars) at src/views/Home.vue:13:8:
+  11 | // @ is an alias to /src
+  12 | import HelloWorld from '@/components/HelloWorld.vue';
+> 13 | import agGridDemo from '@/components/agGridDemo.vue';
+     |        ^
+  14 | import vScrollerDemo from '@/components/vScrollerDemo.vue';
+  15 | 
+  16 | import Vue from 'vue';
+
+
+error: The "HelloWorld" component has been registered but not used (vue/no-unused-components) at src/views/Home.vue:21:5:
+  19 |   name: 'home',
+  20 |   components: {
+> 21 |     HelloWorld,
+     |     ^
+  22 |     vScrollerDemo,
+  23 |   },
+  24 |   beforeCreate() {
+
+
+2 errors found.
+
+Module Warning (from ./node_modules/eslint-loader/index.js):
+error: Caution: `cryptoCurrentApi` also has a named export `getCoinsList`. Check if you meant to write `import {getCoinsList} from '@/services/cryptoCurrency'` instead (import/no-named-as-default-member) at src/components/agGridDemo.vue:50:32:
+  48 |       try {
+  49 |         this.loading = true;
+> 50 |         const response = await cryptoCurrentApi.getCoinsList();
+     |                                ^
+  51 |         this.rowData = response.data;
+  52 |       } catch (err) {
+  53 |         console.error(err);
+
+
+warning: Unexpected console statement (no-console) at src/components/agGridDemo.vue:53:9:
+  51 |         this.rowData = response.data;
+  52 |       } catch (err) {
+> 53 |         console.error(err);
+     |         ^
+  54 |       } finally {
+  55 |         this.loading = false;
+  56 |       }
+
+
+1 error and 1 warning found.
+
+Module Warning (from ./node_modules/eslint-loader/index.js):
+error: Caution: `cryptoCurrentApi` also has a named export `getCoinsList`. Check if you meant to write `import {getCoinsList} from '@/services/cryptoCurrency'` instead (import/no-named-as-default-member) at src/components/vScrollerDemo.vue:66:32:
+  64 |       try {
+  65 |         this.loading = true;
+> 66 |         const response = await cryptoCurrentApi.getCoinsList();
+     |                                ^
+  67 |         this.rowData = response.data;
+  68 |       } catch (err) {
+  69 |         console.error(err);
+
+
+warning: Unexpected console statement (no-console) at src/components/vScrollerDemo.vue:69:9:
+  67 |         this.rowData = response.data;
+  68 |       } catch (err) {
+> 69 |         console.error(err);
+     |         ^
+  70 |       } finally {
+  71 |         this.loading = false;
+  72 |       }
+
+
+1 error and 1 warning found.
+
+Module Warning (from ./node_modules/eslint-loader/index.js):
+error: Line 34 exceeds the maximum line length of 100 (max-len) at src/components/picker/cuDatePanel.vue:34:1:
+  32 |                   @change="val => handleDateChange(val, 'min')" />
+  33 |               </span>
+> 34 |               <span class="el-date-range-picker__time-picker-wrap" v-clickoutside="handleMinTimeClose">
+     | ^
+  35 |                 <el-input
+  36 |                   size="small"
+  37 |                   class="el-date-range-picker__editor"
+
+
+error: Line 66 exceeds the maximum line length of 100 (max-len) at src/components/picker/cuDatePanel.vue:66:1:
+  64 |                   @change="val => handleDateChange(val, 'max')" />
+  65 |               </span>
+> 66 |               <span class="el-date-range-picker__time-picker-wrap" v-clickoutside="handleMaxTimeClose">
+     | ^
+  67 |                 <el-input
+  68 |                   size="small"
+  69 |                   class="el-date-range-picker__editor"
+
+
+error: Missing file extension "vue" for "element-ui/packages/date-picker/src/panel/date-range" (import/extensions) at src/components/picker/cuDatePanel.vue:190:23:
+  188 | </template>
+  189 | <script>
+> 190 | import dateRange from 'element-ui/packages/date-picker/src/panel/date-range';
+      |                       ^
+  191 | 
+  192 | const extractDateFormat = function (format) {
+  193 |   return format
+
+
+warning: Unexpected unnamed function (func-names) at src/components/picker/cuDatePanel.vue:192:27:
+  190 | import dateRange from 'element-ui/packages/date-picker/src/panel/date-range';
+  191 | 
+> 192 | const extractDateFormat = function (format) {
+      |                           ^
+  193 |   return format
+  194 |     .replace(/\W?m{1,2}|\W?ZZ/g, '')
+  195 |     .replace(/(\W+)?h{1,2}|\W?s{1,3}|\W?a/gi, '')
+
+
+warning: Unexpected unnamed function (func-names) at src/components/picker/cuDatePanel.vue:198:27:
+  196 |     .trim();
+  197 | };
+> 198 | const extractTimeFormat = function (format) {
+      |                           ^
+  199 |   return format
+  200 |     .replace(/\W?D{1,2}|\W?Do|\W?d{1,4}|\W?M{1,4}|\W?y{2,4}\W+/g, '')
+  201 |     .trim();
+
+
+warning: Unexpected console statement (no-console) at src/components/picker/cuDatePanel.vue:221:7:
+  219 |         return extractTimeFormat(this.format);
+  220 |       }
+> 221 |       console.log('asdf');
+      |       ^
+  222 |       return 'HH:mm:ss';
+  223 |     },
+  224 |   },
+
+
+3 errors and 3 warnings found.
+
+Module Warning (from ./node_modules/eslint-loader/index.js):
+error: Missing file extension "vue" for "@/components/coinChart" (import/extensions) at src/views/coinDetails.vue:8:23:
+   6 | 
+   7 | <script>
+>  8 | import coinChart from '@/components/coinChart';
+     |                       ^
+   9 | 
+  10 | export default {
+  11 |   props: ['coin_id'],
+
+
+1 error found.
+
+Module Warning (from ./node_modules/eslint-loader/index.js):
+error: Missing file extension "vue" for "@/components/loader" (import/extensions) at src/views/dashboard.vue:8:20:
+   6 | <script>
+   7 | import Vue from 'vue';
+>  8 | import loader from '@/components/loader';
+     |                    ^
+   9 | 
+  10 | export default {
+  11 |   components: {
+
+
+1 error found.
+
+Module Warning (from ./node_modules/eslint-loader/index.js):
+error: Strings must use singlequote (quotes) at src/components/HelloWorld.vue:19:30:
+  17 | 
+  18 | <script>
+> 19 | import cryptoCurrentApi from "@/services/cryptoCurrency";
+     |                              ^
+  20 | 
+  21 | export default {
+  22 |   name: "HelloWorld",
+
+
+error: Strings must use singlequote (quotes) at src/components/HelloWorld.vue:22:9:
+  20 | 
+  21 | export default {
+> 22 |   name: "HelloWorld",
+     |         ^
+  23 |   props: {
+  24 |     msg: String,
+  25 |   },
+
+
+error: Strings must use singlequote (quotes) at src/components/HelloWorld.vue:31:15:
+  29 |       summaryData: [
+  30 |         {
+> 31 |           id: "adsf",
+     |               ^
+  32 |           name: "asdfadf",
+  33 |           symbol: "asdfasdf",
+  34 |         },
+
+
+error: Strings must use singlequote (quotes) at src/components/HelloWorld.vue:32:17:
+  30 |         {
+  31 |           id: "adsf",
+> 32 |           name: "asdfadf",
+     |                 ^
+  33 |           symbol: "asdfasdf",
+  34 |         },
+  35 |       ],
+
+
+error: Strings must use singlequote (quotes) at src/components/HelloWorld.vue:33:19:
+  31 |           id: "adsf",
+  32 |           name: "asdfadf",
+> 33 |           symbol: "asdfasdf",
+     |                   ^
+  34 |         },
+  35 |       ],
+  36 |     };
+
+
+error: Caution: `cryptoCurrentApi` also has a named export `getCurrencyApiStatus`. Check if you meant to write `import {getCurrencyApiStatus} from '@/services/cryptoCurrency'` instead (import/no-named-as-default-member) at src/components/HelloWorld.vue:39:11:
+  37 |   },
+  38 |   async mounted() {
+> 39 |     await cryptoCurrentApi.getCurrencyApiStatus();
+     |           ^
+  40 |     const response = await cryptoCurrentApi.getCoinsList();
+  41 |     console.log(response);
+  42 |     this.response = response.data;
+
+
+error: Caution: `cryptoCurrentApi` also has a named export `getCoinsList`. Check if you meant to write `import {getCoinsList} from '@/services/cryptoCurrency'` instead (import/no-named-as-default-member) at src/components/HelloWorld.vue:40:28:
+  38 |   async mounted() {
+  39 |     await cryptoCurrentApi.getCurrencyApiStatus();
+> 40 |     const response = await cryptoCurrentApi.getCoinsList();
+     |                            ^
+  41 |     console.log(response);
+  42 |     this.response = response.data;
+  43 |   },
+
+
+warning: Unexpected console statement (no-console) at src/components/HelloWorld.vue:41:5:
+  39 |     await cryptoCurrentApi.getCurrencyApiStatus();
+  40 |     const response = await cryptoCurrentApi.getCoinsList();
+> 41 |     console.log(response);
+     |     ^
+  42 |     this.response = response.data;
+  43 |   },
+  44 |   methods: {},
+
+
+7 errors and 1 warning found.
+5 errors potentially fixable with the `--fix` option.
+
+Module Warning (from ./node_modules/eslint-loader/index.js):
+error: Unexpected use of file extension "js" for "@/worker/parser.worker.js" (import/extensions) at src/components/coinChart.vue:17:20:
+  15 | import cryptoCurrentApi from '@/services/cryptoCurrency';
+  16 | import { DateTime } from 'luxon';
+> 17 | import Worker from '@/worker/parser.worker.js';
+     |                    ^
+  18 | 
+  19 | export default {
+  20 |   props: ['coin_id'],
+
+
+warning: Unexpected unnamed function (func-names) at src/components/coinChart.vue:62:31:
+  60 |       this.worker = new Worker();
+  61 |       let result;
+> 62 |       this.worker.onmessage = function (event) {
+     |                               ^
+  63 |         if (!result) {
+  64 |           result = document.createElement('div');
+  65 |           result.setAttribute('id', 'result');
+
+
+error: 'timeZone' is defined but never used (no-unused-vars) at src/components/coinChart.vue:76:17:
+  74 |       });
+  75 |     },
+> 76 |     getDateDiff(timeZone) {
+     |                 ^
+  77 |       const endDate = DateTime.local();
+  78 |       const startDate = DateTime.fromFormat(this.value1, this.format);
+  79 |       return endDate.diff(startDate, 'days').toObject();
+
+
+error: Caution: `cryptoCurrentApi` also has a named export `getCoinHistoryByCoinId`. Check if you meant to write `import {getCoinHistoryByCoinId} from '@/services/cryptoCurrency'` instead (import/no-named-as-default-member) at src/components/coinChart.vue:86:30:
+  84 |     async getCoinHistoryByCoinId() {
+  85 |       const dateDiff = this.getDateDiff().days;
+> 86 |       const response = await cryptoCurrentApi.getCoinHistoryByCoinId(
+     |                              ^
+  87 |         this.coin_id,
+  88 |         dateDiff,
+  89 |       );
+
+
+3 errors and 1 warning found.
+
+You may use special comments to disable some warnings.
+Use // eslint-disable-next-line to ignore the next line.
+Use /* eslint-disable */ to ignore all warnings in a file.
+ warning  in ./src/router.js
+
+Compilation error while processing magic comment(-s): /* webpackChunkName: "coin";webpackPrefetch:true  */: Unexpected token ;
+
+ @ ./src/main2.js 13:0-30 21:10-16
+ @ multi ./src/main2.js
+
+ warning  in ./src/components/picker/cuDatePicker.js
+
+Module Warning (from ./node_modules/thread-loader/dist/cjs.js):
+
+/home/rajasekhar/webdesign/personal_blog/src/components/picker/cuDatePicker.js
+    1:20  error    Missing file extension "vue" for "element-ui/packages/date-picker/src/picker"                                                                                          import/extensions
+    2:23  error    Missing file extension "vue" for "element-ui/packages/date-picker/src/panel/date"                                                                                      import/extensions
+    3:28  error    Missing file extension "vue" for "element-ui/packages/date-picker/src/panel/date-range"                                                                                import/extensions
+    8:25  error    Missing file extension "vue" for "./cuDatePanel"                                                                                                                       import/extensions
+   30:24  warning  Unexpected unnamed function                                                                                                                                            func-names
+   34:21  warning  Unexpected unnamed function                                                                                                                                            func-names
+   38:25  warning  Unexpected unnamed function                                                                                                                                            func-names
+   49:22  warning  Unexpected unnamed function                                                                                                                                            func-names
+   51:5   error    Assignment to function parameter 'array'                                                                                                                               no-param-reassign
+  156:12  error    Unexpected use of 'isNaN'                                                                                                                                              no-restricted-globals
+  217:1   error    Line 217 exceeds the maximum line length of 100                                                                                                                        max-len
+  230:1   error    Line 230 exceeds the maximum line length of 100                                                                                                                        max-len
+  238:7   warning  Unexpected console statement                                                                                                                                           no-console
+  249:5   warning  Unexpected console statement                                                                                                                                           no-console
+  274:1   error    Line 274 exceeds the maximum line length of 100                                                                                                                        max-len
+  276:9   error    for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array  no-restricted-syntax
+  278:21  error    Do not access Object.prototype method 'hasOwnProperty' from target object                                                                                              no-prototype-builtins
+  295:7   error    Expected an assignment or function call and instead saw an expression                                                                                                  no-unused-expressions
+  299:30  error    Unexpected chained assignment                                                                                                                                          no-multi-assign
+  301:9   error    Expected an assignment or function call and instead saw an expression                                                                                                  no-unused-expressions
+  317:1   error    Line 317 exceeds the maximum line length of 100                                                                                                                        max-len
+
+✖ 21 problems (15 errors, 6 warnings)
+
+
+ @ ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/views/datePickerView.vue?vue&type=script&lang=js& 13:0-60 16:18-30
+ @ ./src/views/datePickerView.vue?vue&type=script&lang=js&
+ @ ./src/views/datePickerView.vue
+ @ ./src/router.js
+ @ ./src/main2.js
+ @ multi ./src/main2.js
+
+ warning  in ./src/router.js
+
+Module Warning (from ./node_modules/thread-loader/dist/cjs.js):
+
+/home/rajasekhar/webdesign/personal_blog/src/router.js
+   1:17  error  Strings must use singlequote                                   quotes
+   2:20  error  Strings must use singlequote                                   quotes
+   3:24  error  Strings must use singlequote                                   quotes
+   4:8   error  'Home' is defined but never used                               no-unused-vars
+   4:18  error  Strings must use singlequote                                   quotes
+   5:27  error  Missing file extension "vue" for "./components/vScrollerDemo"  import/extensions
+   5:27  error  Strings must use singlequote                                   quotes
+  10:9   error  Strings must use singlequote                                   quotes
+  14:13  error  Strings must use singlequote                                   quotes
+  15:14  error  Strings must use singlequote                                   quotes
+  16:13  error  Strings must use singlequote                                   quotes
+  17:63  error  Strings must use singlequote                                   quotes
+  17:92  error  Missing trailing comma                                         comma-dangle
+  20:13  error  Strings must use singlequote                                   quotes
+  21:13  error  Strings must use singlequote                                   quotes
+  22:67  error  Strings must use singlequote                                   quotes
+  22:91  error  Missing trailing comma                                         comma-dangle
+  25:13  error  Strings must use singlequote                                   quotes
+  26:13  error  Strings must use singlequote                                   quotes
+  27:31  error  Missing trailing comma                                         comma-dangle
+  30:13  error  Strings must use singlequote                                   quotes
+  31:13  error  Strings must use singlequote                                   quotes
+  34:9   error  Expected no linebreak before this expression                   implicit-arrow-linebreak
+  34:69  error  Strings must use singlequote                                   quotes
+  34:95  error  Missing trailing comma                                         comma-dangle
+  37:13  error  Strings must use singlequote                                   quotes
+  38:13  error  Strings must use singlequote                                   quotes
+  39:28  error  Missing trailing comma                                         comma-dangle
+  42:13  error  Strings must use singlequote                                   quotes
+  43:13  error  Strings must use singlequote                                   quotes
+  44:63  error  Strings must use singlequote                                   quotes
+  44:93  error  Missing trailing comma                                         comma-dangle
+  45:6   error  Missing trailing comma                                         comma-dangle
+  46:4   error  Missing trailing comma                                         comma-dangle
+
+✖ 34 problems (34 errors, 0 warnings)
+  32 errors and 0 warnings potentially fixable with the `--fix` option.
+
+
+ @ ./src/main2.js 13:0-30 21:10-16
+ @ multi ./src/main2.js
+
+ warning  
+
+asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  js/chunk-ec755bda.e55f548a.js (342 KiB)
+  css/index.04f1f1d9.css (344 KiB)
+  js/index.8cd5beda.js (1.8 MiB)
+
+ warning  
+
+entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  index (2.14 MiB)
+      css/index.04f1f1d9.css
+      js/index.8cd5beda.js
+
+
+  File                                      Size             Gzipped
+
+  dist/js/index.8cd5beda.js                 1842.78 KiB      451.38 KiB
+  dist/js/chunk-ec755bda.e55f548a.js        341.54 KiB       111.43 KiB
+  dist/js/vendors~about.f2e2a0b4.js         129.78 KiB       37.00 KiB
+  dist/js/about.5cd681e0.js                 12.44 KiB        3.49 KiB
+  dist/js/chunk-2d2089eb.c5d63fbf.js        3.99 KiB         1.63 KiB
+  dist/precache-manifest.e2cb55b8336a5d4    1.30 KiB         0.51 KiB
+  b5c051b76ff065bf3.js
+  dist/js/parser.worker.dbedb6f1.worker.    1.07 KiB         0.53 KiB
+  js
+  dist/js/dashboard.d2447ee1.js             0.95 KiB         0.52 KiB
+  dist/service-worker.js                    0.95 KiB         0.54 KiB
+  dist/css/index.04f1f1d9.css               344.12 KiB       55.20 KiB
+  dist/css/about.92af46a6.css               0.07 KiB         0.06 KiB
+
+  Images and other types of assets omitted.
+
+ DONE  Build complete. The dist directory is ready to be deployed.
+ INFO  Check out deployment instructions at https://cli.vuejs.org/guide/deployment.html
+      

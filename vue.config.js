@@ -21,6 +21,7 @@ module.exports = {
         inline: "fallback"
       })
       .end();
+    config.optimization.splitChunks({ minChunks: 1 });
     config.merge({
       output: {
         globalObject: "this" //"(typeof self !== 'undefined' ? self : this)"

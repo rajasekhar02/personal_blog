@@ -1,35 +1,47 @@
 <template>
   <div class="hello">
-   <el-table :data="response.data">
-     <el-table-column prop="id"></el-table-column>
-     <el-table-column prop="name"></el-table-column>
-     <el-table-column prop="symbol"></el-table-column>
-   </el-table>
+    <el-table :data="response">
+      <el-table-column prop="id"></el-table-column>
+      <el-table-column prop="name"></el-table-column>
+      <el-table-column prop="symbol"></el-table-column>
+      <template slot="append">
+        <el-table :show-header="false" :data="summaryData">
+          <el-table-column prop="id"></el-table-column>
+          <el-table-column prop="name"></el-table-column>
+          <el-table-column prop="symbol"></el-table-column>
+        </el-table>
+      </template>
+    </el-table>
   </div>
 </template>
 
 <script>
-import cryptoCurrentApi from '@/services/cryptoCurrency';
+import cryptoCurrentApi from "@/services/cryptoCurrency";
 
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
     msg: String,
   },
   data() {
     return {
       response: undefined,
+      summaryData: [
+        {
+          id: "adsf",
+          name: "asdfadf",
+          symbol: "asdfasdf",
+        },
+      ],
     };
   },
   async mounted() {
     await cryptoCurrentApi.getCurrencyApiStatus();
     const response = await cryptoCurrentApi.getCoinsList();
     console.log(response);
-    // this.response = response.data
+    this.response = response.data;
   },
-  methods: {
-
-  },
+  methods: {},
 };
 </script>
 
