@@ -1,17 +1,18 @@
 <template>
-    <div>
-         <cu-date-picker
-            v-model="value1"
-            value-format="dd-MM-yyyy HH:mm"
-            format="dd-MM-yyyy, HH:mm"
-            type="cudaterange"
-        >
+  <div>
+    <cu-date-picker
+      v-model="value1"
+      :unlink-panels="true"
+      value-format="dd-MM-yyyy"
+      format="dd-MM-yyyy"
+      type="cudaterange"
+    >
     </cu-date-picker>
-    </div>
+  </div>
 </template>
 
 <script>
-import cuDatePicker from '@/components/picker/cuDatePicker';
+import cuDatePicker from "@/components/picker/cuDatePicker";
 
 export default {
   components: {
@@ -19,14 +20,15 @@ export default {
   },
   data() {
     return {
-      value1: ['12-2-2000 23:23', '12-2-2000 23:23'],
+      value1: ["12-2-2000", "12-2-2000"],
     };
   },
 };
 </script>
 
 <style lang="scss">
-.el-date-editor.el-input, .el-date-editor.el-input__inner{
-    width:100%
+.el-date-editor.el-input,
+.el-date-editor.el-input__inner {
+  width: 100%;
 }
 </style>
